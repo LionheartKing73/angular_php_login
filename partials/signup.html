@@ -1,0 +1,176 @@
+<div class="breadcrumbs" id="breadcrumbs">
+    <ul class="breadcrumb">
+        <li>
+            <a href="#">Home</a>
+        </li>
+        <li class="active">SignUp</li>
+    </ul>
+</div>
+<div class="page-content">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <div id="login-box" class="login-box visible widget-box no-border">
+                <div class="widget-body">
+                    <div class="widget-main">
+                        <h4 class="header blue lighter bigger">
+                            Signup for AngularCode
+                        </h4>
+                        <br/>
+                        <form name="signupForm" class="form-horizontal" role="form">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="input-group col-md-8">
+                                            <div class="input-group-addon">
+                                                <i class="fa fa-user"></i>
+                                            </div>                                                                          
+                                            <span class="block input-icon input-icon-right">
+                                                <input type="text" class="form-control" placeholder="First Name" ng-model="signup.first_name" />
+                                            </span>                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="input-group col-md-8">
+                                            <div class="input-group-addon">
+                                                <i class="fa fa-user"></i>
+                                            </div>                                                                          
+                                            <span class="block input-icon input-icon-right">
+                                                <input type="text" class="form-control" placeholder="Last Name" ng-model="signup.last_name" />
+                                            </span>                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="input-group col-md-8">
+                                            <div class="input-group-addon">
+                                                <i class="ace-icon fa fa-lock"></i>
+                                            </div>                                            
+                                            <span class="block input-icon input-icon-right">
+                                                <input type="password" class="form-control" name = "password" placeholder="Password" ng-model="signup.password" required/>
+                                                <small class="errorMessage" data-ng-show="signupForm.password.$dirty && signupForm.password.$invalid"> Enter Password.</small>
+                                            </span>                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="input-group col-md-8">
+                                            <div class="input-group-addon">
+                                                <i class="ace-icon fa fa-lock"></i>
+                                            </div>                                            
+                                            
+                                            <span class="block input-icon input-icon-right">
+                                                <input type="password" class="form-control" name="password2" placeholder="Re-Enter Password" ng-model="signup.password2" password-match="signup.password" required/>                                
+                                                <small class="errorMessage" data-ng-show="signupForm.password2.$dirty && signupForm.password2.$error.required"> Enter password again.</small>
+                                                <small class="errorMessage" data-ng-show="signupForm.password2.$dirty && signupForm.password2.$error.passwordNoMatch && !signupForm.password2.$error.required"> Password do not match.</small>
+                                            </span>                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="input-group col-md-8">
+                                            <div class="input-group-addon">
+                                                <i class="fa fa-envelope"></i>
+                                            </div>                                             
+                                            <span class="block input-icon input-icon-right">
+                                                <input type="text" class="form-control" placeholder="Email" name="email" ng-model="signup.email" focus/>
+                                                <span ng-show="signupForm.email.$error.email" class="help-inline">Email is not valid</span> 
+                                            </span>                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="input-group col-md-8">
+                                            <div class="input-group-addon">
+                                                <i class="fa fa-envelope"></i>
+                                            </div>                                                  
+                                            <span class="block input-icon input-icon-right">
+                                                <input type="text" class="form-control" name="email2" placeholder="Re-Enter Email" ng-model="signup.email2" password-match="signup.email" required/>                                
+                                                <small class="errorMessage" data-ng-show="signupForm.email2.$dirty && signupForm.email2.$error.required"> Enter email again.</small>
+                                                <small class="errorMessage" data-ng-show="signupForm.email2.$dirty && signupForm.email2.$error.passwordNoMatch && !signupForm.email2.$error.required"> Email do not match.</small>
+                                            </span>                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Country -->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="input-group col-md-8">                                 
+                                            <div class="input-group-addon">
+                                                <i class="fa fa-globe"></i>
+                                            </div>                                                  
+                                            <span class="block input-icon input-icon-right">               
+
+                                                <select class="form-control" placeholder="Country"  ng-model="signup.country">
+                                                    <option ng-repeat="country in countries" value="{{country.countryName}}">{{country.countryName}}</option>
+                                                </select>                                                
+                                            </span>                                            
+                                        </div>
+                                    </div>
+                                </div>       
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="input-group col-md-8">                                
+                                            <div class="input-group-addon">
+                                                <i class="fa fa-phone-square"></i>
+                                            </div>                                            
+                                            <span class="block input-icon input-icon-right">
+                                                <input type="text" class="form-control" placeholder="Phone" name="phone" ng-model="signup.phone"/>
+                                            </span>                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="input-group col-md-8">                                
+                                            <div class="input-group-addon">                                                
+                                                Birthday
+                                            </div>                                            
+                                            
+                                            <span class="block input-icon input-icon-right">
+                                                <input type="date" class="form-control" placeholder="Date" name="date" ng-model="signup.date"/>
+                                            </span>                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Currency -->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="input-group col-md-8">                                 
+                                            <div class="input-group-addon">
+                                                <i class="fa fa-dollar"></i>
+                                            </div>                                                  
+                                            <span class="block input-icon input-icon-right"> 
+                                                <select class="form-control" placeholder="Currency"  ng-model="signup.currency">
+                                                    <option ng-repeat="currency in currencies" value="{{currency.currencyName}}">{{currency.currencyName}}</option>
+                                                </select>                                                
+                                            </span>                                            
+                                        </div>
+                                    </div>
+                                </div>                                                                            
+                            </div>                            
+                            <div class="form-group">
+                                <!-- <span class="lbl col-sm-4"> </span> -->
+                                <div class="col-md-2"></div>
+                                <div class="col-md-8">
+                                    <button type="submit" class="width-35 pull-right btn btn-sm btn-primary" ng-click="signUp(signup)" data-ng-disabled="signupForm.$invalid">
+                                        Sign Up
+                                    </button>
+                                </div>
+                            </div>                            
+                            <span class="lbl col-sm-3"> </span>
+                            <div class="col-sm-9">Already have an account? <a href="#/login">SignIn</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
