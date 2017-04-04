@@ -5,7 +5,7 @@ How to run this app?
 
 - copy the project folder to xampp/htdocs/
 
-- Run xampp, 
+- Run xampp,  
   start Apache and MySQL
 
 - Import Database(*.sql)
