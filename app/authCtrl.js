@@ -14,17 +14,26 @@ app.controller('authCtrl', function ($scope, $rootScope, $routeParams, $location
     };
 
     //=== countries ===
-    $scope.countries = [
-        {countryName : "USA", code : "99"},
-        {countryName : "Russia", code : "98"},
-        {countryName : "India", code : "97"},
-        {countryName : "Australia", code : "96"},
-        {countryName : "South Africa", code : "95"}
-    ];
+
+    $http.get("api/v1/getCountryData.php").then(function (response) {
+        $scope.countries = response.data;
+    });
+
+    $.getJSON('http://api.wipmania.com/jsonp?callback=?', function (data) {
+        myCountry = data.address.country;        
+        $("#country_select").val(myCountry);        
+
+        for (i = 0; i < $scope.countries.length; i++) {
+            if($scope.countries[i].countryName == myCountry){
+                $('#phone_number').val($scope.countries[i].code + ' : ');
+            }            
+        }                
+    });      
+
     //=================
 
     //=== currencies ===
-    $scope.currencies = [
+    $scope.currencies = [        
         {currencyName : "USD", value : "10"},
         {currencyName : "EUR", value : "10"},
         {currencyName : "GBP", value : "10"}

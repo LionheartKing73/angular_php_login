@@ -107,7 +107,7 @@
                                             </div>                                                  
                                             <span class="block input-icon input-icon-right">               
 
-                                                <select class="form-control" placeholder="Country"  ng-model="signup.country">
+                                                <select id="country_select" class="form-control" placeholder="Country"  ng-model="signup.country">
                                                     <option ng-repeat="country in countries" value="{{country.countryName}}">{{country.countryName}}</option>
                                                 </select>                                                
                                             </span>                                            
@@ -121,7 +121,7 @@
                                                 <i class="fa fa-phone-square"></i>
                                             </div>                                            
                                             <span class="block input-icon input-icon-right">
-                                                <input type="text" class="form-control" placeholder="Phone" name="phone" ng-model="signup.phone"/>
+                                                <input id="phone_number" type="text" class="form-control" placeholder="Phone" name="phone" ng-model="signup.phone"/>
                                             </span>                                            
                                         </div>
                                     </div>
